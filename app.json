@@ -1,0 +1,162 @@
+{
+  "id": "nl.intyme.aquaiot",
+  "version": "1.0.0",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "name": {
+    "en": "Aqua IoT"
+  },
+  "description": {
+    "en": "Homey control for Micronova Agua IoT pellet stoves"
+  },
+  "category": [
+    "climate"
+  ],
+  "platforms": [
+    "cloud"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "images": {
+    "small": "/assets/icon.svg",
+    "large": "/assets/icon.svg",
+    "xlarge": "/assets/icon.svg"
+  },
+  "drivers": [
+    {
+      "id": "agua_iot",
+      "name": {
+        "en": "Aqua IoT Stove"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 10,
+          "max": 30,
+          "step": 1
+        }
+      },
+      "platforms": [
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "small": "/drivers/agua_iot/assets/icon.svg",
+        "large": "/drivers/agua_iot/assets/icon.svg",
+        "xlarge": "/drivers/agua_iot/assets/icon.svg"
+      },
+      "settings": [
+        {
+          "id": "polling_interval",
+          "type": "number",
+          "label": {
+            "en": "Polling interval"
+          },
+          "value": 30,
+          "min": 10,
+          "max": 600,
+          "units": {
+            "en": "seconds"
+          }
+        },
+        {
+          "id": "language",
+          "type": "dropdown",
+          "label": {
+            "en": "Register language"
+          },
+          "value": "ENG",
+          "values": [
+            { "id": "ENG", "label": { "en": "English" } },
+            { "id": "NL", "label": { "en": "Dutch" } },
+            { "id": "DE", "label": { "en": "German" } },
+            { "id": "FR", "label": { "en": "French" } },
+            { "id": "PT", "label": { "en": "Portuguese" } }
+          ]
+        },
+        {
+          "id": "air_temp_fix",
+          "type": "checkbox",
+          "label": {
+            "en": "Ignore unrealistic air temperatures"
+          },
+          "value": false
+        },
+        {
+          "id": "reading_error_fix",
+          "type": "checkbox",
+          "label": {
+            "en": "Ignore invalid register values"
+          },
+          "value": false
+        },
+        {
+          "id": "http_timeout",
+          "type": "number",
+          "label": {
+            "en": "HTTP timeout"
+          },
+          "value": 30000,
+          "min": 5000,
+          "max": 60000,
+          "units": {
+            "en": "ms"
+          }
+        },
+        {
+          "id": "buffer_read_timeout",
+          "type": "number",
+          "label": {
+            "en": "Buffer read timeout"
+          },
+          "value": 30000,
+          "min": 5000,
+          "max": 60000,
+          "units": {
+            "en": "ms"
+          }
+        },
+        {
+          "id": "max_number_of_errors_before_device_unavailable",
+          "type": "number",
+          "label": {
+            "en": "Maximum number of errors before device becomes unavailable"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 20
+        }
+      ]
+    }
+  ]
+}
