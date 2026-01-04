@@ -1,0 +1,82 @@
+{
+  "id": "nl.intyme.aquaiot",
+  "version": "1.0.2",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "name": {
+    "en": "Aqua IoT",
+    "nl": "Aqua IoT"
+  },
+  "description": {
+    "en": "Homey control for Micronova Agua IoT pellet stoves",
+    "nl": "Homey-bediening voor Micronova Agua IoT pelletkachels"
+  },
+  "category": [
+    "climate"
+  ],
+  "platforms": [
+    "cloud"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "images": {
+    "small": "/assets/images/app-small.png",
+    "large": "/assets/images/app-large.png",
+    "xlarge": "/assets/images/app-xlarge.png"
+  },
+  "capabilities": {
+    "stove_status": {
+      "type": "string",
+      "title": {
+        "en": "Stove status",
+        "nl": "Kachelstatus"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "stove_alarm": {
+      "type": "string",
+      "title": {
+        "en": "Stove alarm",
+        "nl": "Kachelalarm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "pellet_level": {
+      "type": "number",
+      "title": {
+        "en": "Pellet level",
+        "nl": "Pelletniveau"
+      },
+      "units": "%",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "stove_power": {
+      "type": "number",
+      "title": {
+        "en": "Stove power",
+        "nl": "Kachelvermogen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider"
+    },
+    "water_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Water temperature",
+        "nl": "Watertemperatuur"
+      },
+      "units": "°C",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
+  }
+}

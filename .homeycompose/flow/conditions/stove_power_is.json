@@ -1,0 +1,22 @@
+{
+  "id": "stove_power_is",
+  "title": {
+    "en": "Stove power is",
+    "nl": "Kachelvermogen is"
+  },
+  "args": [
+    {
+      "name": "power",
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "nl": "Vermogen"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

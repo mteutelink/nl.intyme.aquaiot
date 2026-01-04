@@ -1,0 +1,18 @@
+{
+  "id": "stove_status_is",
+  "title": {
+    "en": "Stove status is",
+    "nl": "Kachelstatus is"
+  },
+  "args": [
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

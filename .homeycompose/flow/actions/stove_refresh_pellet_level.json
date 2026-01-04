@@ -1,0 +1,14 @@
+{
+  "id": "stove_refresh_pellet_level",
+  "title": {
+    "en": "Refresh pellet level",
+    "nl": "Ververs pelletniveau"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

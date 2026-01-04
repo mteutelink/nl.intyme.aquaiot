@@ -1,0 +1,22 @@
+{
+  "id": "water_temperature_is",
+  "title": {
+    "en": "Water temperature is",
+    "nl": "Watertemperatuur is"
+  },
+  "args": [
+    {
+      "name": "water_temperature",
+      "type": "number",
+      "title": {
+        "en": "Water temperature",
+        "nl": "Watertemperatuur"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

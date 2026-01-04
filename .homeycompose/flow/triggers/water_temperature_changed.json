@@ -1,0 +1,24 @@
+{
+  "id": "water_temperature_changed",
+  "title": {
+    "en": "Water temperature changed",
+    "nl": "Watertemperatuur gewijzigd"
+  },
+  "tokens": [
+    {
+      "name": "water_temperature",
+      "type": "number",
+      "title": {
+        "en": "Water temperature",
+        "nl": "Watertemperatuur"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}
