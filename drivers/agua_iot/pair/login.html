@@ -1,0 +1,79 @@
+<html>
+
+<body>
+  <script type="application/javascript">
+    let endpoints = [];
+
+    function populateEndpoints(options) {
+      const select = document.getElementById('endpoint');
+      select.innerHTML = '';
+      options.forEach((endpoint) => {
+        const option = document.createElement('option');
+        option.value = endpoint.id;
+        option.textContent = endpoint.name;
+        select.appendChild(option);
+      });
+    }
+
+    function loadEndpoints() {
+      Homey.emit('get_endpoints', null, function (error, result) {
+        if (error) {
+          Homey.error(error);
+          return;
+        }
+        endpoints = result || [];
+        populateEndpoints(endpoints);
+      });
+    }
+
+    function login(event) {
+      event.preventDefault();
+
+      Homey.showLoadingOverlay();
+      Homey.emit(
+        'login',
+        {
+          endpoint: document.getElementById('endpoint').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
+        },
+        function (error) {
+          Homey.hideLoadingOverlay();
+          if (error) {
+            Homey.error(error);
+            return;
+          }
+          Homey.showView('list_devices');
+        }
+      );
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      loadEndpoints();
+    });
+  </script>
+
+  <div class="homey-form">
+    <h1 class="homey-title" data-i18n="pair.login.title">Connect to Agua IoT</h1>
+    <p data-i18n="pair.login.message">Select your stove brand and log in with your Agua IoT account.</p>
+
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="endpoint" data-i18n="pair.login.endpoint">Brand endpoint</label>
+      <select class="homey-form-select" id="endpoint"></select>
+    </div>
+
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="email" data-i18n="pair.login.email">Email</label>
+      <input class="homey-form-input" id="email" name="email" type="email" required />
+    </div>
+
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="password" data-i18n="pair.login.password">Password</label>
+      <input class="homey-form-input" id="password" name="password" type="password" required />
+    </div>
+
+    <button class="homey-button-primary-shadow-full" onclick="login(event)" data-i18n="pair.login.submit">Log in</button>
+  </div>
+</body>
+
+</html>

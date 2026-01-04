@@ -1,0 +1,24 @@
+{
+  "id": "stove_status_changed",
+  "title": {
+    "en": "Stove status changed",
+    "nl": "Kachelstatus gewijzigd"
+  },
+  "tokens": [
+    {
+      "name": "status",
+      "type": "text",
+      "title": {
+        "en": "Status",
+        "nl": "Status"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

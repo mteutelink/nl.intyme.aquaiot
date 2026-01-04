@@ -1,0 +1,157 @@
+{
+  "name": {
+    "en": "Aqua IoT Stove",
+    "nl": "Aqua IoT kachel"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "water_temperature",
+    "stove_status",
+    "stove_alarm",
+    "pellet_level",
+    "stove_power"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 10,
+      "max": 30,
+      "step": 1
+    },
+    "pellet_level": {
+      "units": "%"
+    },
+    "stove_power": {
+      "min": 1,
+      "max": 5,
+      "step": 1
+    }
+  },
+  "platforms": [
+    "cloud"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "pair": [
+    {
+      "id": "login",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/driver-small.png",
+    "large": "{{driverAssetsPath}}/images/driver-large.png",
+    "xlarge": "{{driverAssetsPath}}/images/driver-xlarge.png"
+  },
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "label": {
+        "en": "Polling interval",
+        "nl": "Polling interval"
+      },
+      "value": 30,
+      "min": 10,
+      "max": 600,
+      "units": {
+        "en": "seconds",
+        "nl": "seconden"
+      }
+    },
+    {
+      "id": "language",
+      "type": "dropdown",
+      "label": {
+        "en": "Register language",
+        "nl": "Registertaal"
+      },
+      "value": "ENG",
+      "values": [
+        { "id": "ENG", "label": { "en": "English", "nl": "Engels" } },
+        { "id": "NL", "label": { "en": "Dutch", "nl": "Nederlands" } },
+        { "id": "DE", "label": { "en": "German", "nl": "Duits" } },
+        { "id": "FR", "label": { "en": "French", "nl": "Frans" } },
+        { "id": "PT", "label": { "en": "Portuguese", "nl": "Portugees" } }
+      ]
+    },
+    {
+      "id": "air_temp_fix",
+      "type": "checkbox",
+      "label": {
+        "en": "Ignore unrealistic air temperatures",
+        "nl": "Negeer onrealistische luchttemperaturen"
+      },
+      "value": false
+    },
+    {
+      "id": "reading_error_fix",
+      "type": "checkbox",
+      "label": {
+        "en": "Ignore invalid register values",
+        "nl": "Negeer ongeldige registerwaarden"
+      },
+      "value": false
+    },
+    {
+      "id": "http_timeout",
+      "type": "number",
+      "label": {
+        "en": "HTTP timeout",
+        "nl": "HTTP-timeout"
+      },
+      "value": 30000,
+      "min": 5000,
+      "max": 60000,
+      "units": {
+        "en": "ms",
+        "nl": "ms"
+      }
+    },
+    {
+      "id": "buffer_read_timeout",
+      "type": "number",
+      "label": {
+        "en": "Buffer read timeout",
+        "nl": "Buffer lees-timeout"
+      },
+      "value": 30000,
+      "min": 5000,
+      "max": 60000,
+      "units": {
+        "en": "ms",
+        "nl": "ms"
+      }
+    },
+    {
+      "id": "max_number_of_errors_before_device_unavailable",
+      "type": "number",
+      "label": {
+        "en": "Maximum number of errors before device becomes unavailable",
+        "nl": "Maximaal aantal fouten voordat het apparaat onbeschikbaar is"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 20
+    }
+  ]
+}

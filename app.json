@@ -1,0 +1,629 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.intyme.aquaiot",
+  "version": "1.0.2",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "name": {
+    "en": "Aqua IoT",
+    "nl": "Aqua IoT"
+  },
+  "description": {
+    "en": "Homey control for Micronova Agua IoT pellet stoves",
+    "nl": "Homey-bediening voor Micronova Agua IoT pelletkachels"
+  },
+  "category": [
+    "climate"
+  ],
+  "platforms": [
+    "cloud"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "images": {
+    "small": "/assets/images/app-small.png",
+    "large": "/assets/images/app-large.png",
+    "xlarge": "/assets/images/app-xlarge.png"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "stove_status_changed",
+        "title": {
+          "en": "Stove status changed",
+          "nl": "Kachelstatus gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "status",
+            "type": "text",
+            "title": {
+              "en": "Status",
+              "nl": "Status"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_alarm_changed",
+        "title": {
+          "en": "Stove alarm changed",
+          "nl": "Kachelalarm gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "alarm",
+            "type": "text",
+            "title": {
+              "en": "Alarm",
+              "nl": "Alarm"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_power_changed",
+        "title": {
+          "en": "Stove power changed",
+          "nl": "Kachelvermogen gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power",
+              "nl": "Vermogen"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "pellet_level_changed",
+        "title": {
+          "en": "Pellet level changed",
+          "nl": "Pelletniveau gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "pellet_level",
+            "type": "number",
+            "title": {
+              "en": "Pellet level",
+              "nl": "Pelletniveau"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "water_temperature_changed",
+        "title": {
+          "en": "Water temperature changed",
+          "nl": "Watertemperatuur gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "water_temperature",
+            "type": "number",
+            "title": {
+              "en": "Water temperature",
+              "nl": "Watertemperatuur"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "stove_is_on",
+        "title": {
+          "en": "Stove is !{{on|off}}",
+          "nl": "Kachel is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_status_is",
+        "title": {
+          "en": "Stove status is",
+          "nl": "Kachelstatus is"
+        },
+        "args": [
+          {
+            "name": "status",
+            "type": "text"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_alarm_is",
+        "title": {
+          "en": "Stove alarm is",
+          "nl": "Kachelalarm is"
+        },
+        "args": [
+          {
+            "name": "alarm",
+            "type": "text"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_power_is",
+        "title": {
+          "en": "Stove power is",
+          "nl": "Kachelvermogen is"
+        },
+        "args": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power",
+              "nl": "Vermogen"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "pellet_level_is",
+        "title": {
+          "en": "Pellet level is",
+          "nl": "Pelletniveau is"
+        },
+        "args": [
+          {
+            "name": "pellet_level",
+            "type": "number",
+            "title": {
+              "en": "Pellet level",
+              "nl": "Pelletniveau"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "water_temperature_is",
+        "title": {
+          "en": "Water temperature is",
+          "nl": "Watertemperatuur is"
+        },
+        "args": [
+          {
+            "name": "water_temperature",
+            "type": "number",
+            "title": {
+              "en": "Water temperature",
+              "nl": "Watertemperatuur"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "stove_turn_on",
+        "title": {
+          "en": "Turn the stove on",
+          "nl": "Zet de kachel aan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_turn_off",
+        "title": {
+          "en": "Turn the stove off",
+          "nl": "Zet de kachel uit"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_set_target_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "nl": "Stel doeltemperatuur in"
+        },
+        "args": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_set_power",
+        "title": {
+          "en": "Set stove power",
+          "nl": "Stel kachelvermogen in"
+        },
+        "args": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power",
+              "nl": "Vermogen"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_sync_clock",
+        "title": {
+          "en": "Synchronize stove clock",
+          "nl": "Synchroniseer de kachelklok"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_refresh_status",
+        "title": {
+          "en": "Refresh stove status",
+          "nl": "Ververs kachelstatus"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_refresh_alarm",
+        "title": {
+          "en": "Refresh stove alarms",
+          "nl": "Ververs kachelalarmen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_refresh_water_temperature",
+        "title": {
+          "en": "Refresh water temperature",
+          "nl": "Ververs watertemperatuur"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      },
+      {
+        "id": "stove_refresh_pellet_level",
+        "title": {
+          "en": "Refresh pellet level",
+          "nl": "Ververs pelletniveau"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=agua_iot"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Aqua IoT Stove",
+        "nl": "Aqua IoT kachel"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "water_temperature",
+        "stove_status",
+        "stove_alarm",
+        "pellet_level",
+        "stove_power"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 10,
+          "max": 30,
+          "step": 1
+        },
+        "pellet_level": {
+          "units": "%"
+        },
+        "stove_power": {
+          "min": 1,
+          "max": 5,
+          "step": 1
+        }
+      },
+      "platforms": [
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "small": "/drivers/agua_iot/assets/images/driver-small.png",
+        "large": "/drivers/agua_iot/assets/images/driver-large.png",
+        "xlarge": "/drivers/agua_iot/assets/images/driver-xlarge.png"
+      },
+      "id": "agua_iot",
+      "settings": [
+        {
+          "id": "polling_interval",
+          "type": "number",
+          "label": {
+            "en": "Polling interval",
+            "nl": "Polling interval"
+          },
+          "value": 30,
+          "min": 10,
+          "max": 600,
+          "units": {
+            "en": "seconds",
+            "nl": "seconden"
+          }
+        },
+        {
+          "id": "language",
+          "type": "dropdown",
+          "label": {
+            "en": "Register language",
+            "nl": "Registertaal"
+          },
+          "value": "ENG",
+          "values": [
+            { "id": "ENG", "label": { "en": "English", "nl": "Engels" } },
+            { "id": "NL", "label": { "en": "Dutch", "nl": "Nederlands" } },
+            { "id": "DE", "label": { "en": "German", "nl": "Duits" } },
+            { "id": "FR", "label": { "en": "French", "nl": "Frans" } },
+            { "id": "PT", "label": { "en": "Portuguese", "nl": "Portugees" } }
+          ]
+        },
+        {
+          "id": "air_temp_fix",
+          "type": "checkbox",
+          "label": {
+            "en": "Ignore unrealistic air temperatures",
+            "nl": "Negeer onrealistische luchttemperaturen"
+          },
+          "value": false
+        },
+        {
+          "id": "reading_error_fix",
+          "type": "checkbox",
+          "label": {
+            "en": "Ignore invalid register values",
+            "nl": "Negeer ongeldige registerwaarden"
+          },
+          "value": false
+        },
+        {
+          "id": "http_timeout",
+          "type": "number",
+          "label": {
+            "en": "HTTP timeout",
+            "nl": "HTTP-timeout"
+          },
+          "value": 30000,
+          "min": 5000,
+          "max": 60000,
+          "units": {
+            "en": "ms",
+            "nl": "ms"
+          }
+        },
+        {
+          "id": "buffer_read_timeout",
+          "type": "number",
+          "label": {
+            "en": "Buffer read timeout",
+            "nl": "Buffer lees-timeout"
+          },
+          "value": 30000,
+          "min": 5000,
+          "max": 60000,
+          "units": {
+            "en": "ms",
+            "nl": "ms"
+          }
+        },
+        {
+          "id": "max_number_of_errors_before_device_unavailable",
+          "type": "number",
+          "label": {
+            "en": "Maximum number of errors before device becomes unavailable",
+            "nl": "Maximaal aantal fouten voordat het apparaat onbeschikbaar is"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 20
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "stove_status": {
+      "type": "string",
+      "title": {
+        "en": "Stove status",
+        "nl": "Kachelstatus"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "stove_alarm": {
+      "type": "string",
+      "title": {
+        "en": "Stove alarm",
+        "nl": "Kachelalarm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "pellet_level": {
+      "type": "number",
+      "title": {
+        "en": "Pellet level",
+        "nl": "Pelletniveau"
+      },
+      "units": "%",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "stove_power": {
+      "type": "number",
+      "title": {
+        "en": "Stove power",
+        "nl": "Kachelvermogen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider"
+    },
+    "water_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Water temperature",
+        "nl": "Watertemperatuur"
+      },
+      "units": "°C",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
+  }
+}

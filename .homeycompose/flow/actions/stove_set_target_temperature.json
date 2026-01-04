@@ -1,0 +1,22 @@
+{
+  "id": "stove_set_target_temperature",
+  "title": {
+    "en": "Set target temperature",
+    "nl": "Stel doeltemperatuur in"
+  },
+  "args": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

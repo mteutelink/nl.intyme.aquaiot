@@ -1,0 +1,14 @@
+{
+  "id": "stove_refresh_water_temperature",
+  "title": {
+    "en": "Refresh water temperature",
+    "nl": "Ververs watertemperatuur"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

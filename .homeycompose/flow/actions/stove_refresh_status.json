@@ -1,0 +1,14 @@
+{
+  "id": "stove_refresh_status",
+  "title": {
+    "en": "Refresh stove status",
+    "nl": "Ververs kachelstatus"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

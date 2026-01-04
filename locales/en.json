@@ -1,0 +1,12 @@
+{
+  "pair": {
+    "login": {
+      "title": "Connect to Agua IoT",
+      "message": "Select your stove brand and log in with your Agua IoT account.",
+      "endpoint": "Brand endpoint",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in"
+    }
+  }
+}

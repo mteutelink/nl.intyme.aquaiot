@@ -1,0 +1,12 @@
+{
+  "pair": {
+    "login": {
+      "title": "Verbind met Agua IoT",
+      "message": "Selecteer je kachelmerk en log in met je Agua IoT-account.",
+      "endpoint": "Merk-endpoint",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "submit": "Inloggen"
+    }
+  }
+}

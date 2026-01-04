@@ -1,0 +1,14 @@
+{
+  "id": "stove_is_on",
+  "title": {
+    "en": "Stove is !{{on|off}}",
+    "nl": "Kachel is !{{aan|uit}}"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

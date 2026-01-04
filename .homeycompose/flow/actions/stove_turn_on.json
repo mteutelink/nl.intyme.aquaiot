@@ -1,0 +1,14 @@
+{
+  "id": "stove_turn_on",
+  "title": {
+    "en": "Turn the stove on",
+    "nl": "Zet de kachel aan"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

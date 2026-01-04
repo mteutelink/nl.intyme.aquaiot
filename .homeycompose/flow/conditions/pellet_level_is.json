@@ -1,0 +1,22 @@
+{
+  "id": "pellet_level_is",
+  "title": {
+    "en": "Pellet level is",
+    "nl": "Pelletniveau is"
+  },
+  "args": [
+    {
+      "name": "pellet_level",
+      "type": "number",
+      "title": {
+        "en": "Pellet level",
+        "nl": "Pelletniveau"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}

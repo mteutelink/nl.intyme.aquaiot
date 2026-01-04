@@ -1,0 +1,22 @@
+{
+  "id": "stove_set_power",
+  "title": {
+    "en": "Set stove power",
+    "nl": "Stel kachelvermogen in"
+  },
+  "args": [
+    {
+      "name": "power",
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "nl": "Vermogen"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=agua_iot"
+    }
+  ]
+}
